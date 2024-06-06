@@ -20,7 +20,7 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View>
-      <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
+      <TextInput placeholder="DFGDFG" value={email} onChangeText={setEmail} />
       <TextInput
         placeholder="Password"
         value={password}

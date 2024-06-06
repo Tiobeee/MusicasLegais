@@ -20,4 +20,9 @@ export default StyleSheet.create({
   error: {
     color: "red",
   },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });

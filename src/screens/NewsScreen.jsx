@@ -6,10 +6,10 @@ export default function NewsScreen() {
 
   useEffect(() => {
     fetch(
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=YOUR_NEWS_API_KEY"
+      ""
     )
       .then((response) => response.json())
-      .then((data) => setNews(data.articles))
+      .then((data) => setNews(data.id))
       .catch((error) => console.error(error));
   }, []);
 
