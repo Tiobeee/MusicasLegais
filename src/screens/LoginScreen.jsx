@@ -22,6 +22,7 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View styles={styles.container}>
+      <Text> Login: pinpin@gmail.com Senha: pinpin</Text>
       <TextInput placeholder="Username" value={email} onChangeText={setEmail} style={styles.textinput} />
       <TextInput
         placeholder="Senha"
