@@ -25,4 +25,12 @@ export default StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  textinput: {
+    borderWidth: 2,
+    textAlign: "center",
+    flex: 1,
+    padding: 4,
+    justifyContent: "center",
+    alignItems: "center"
+  }
 });

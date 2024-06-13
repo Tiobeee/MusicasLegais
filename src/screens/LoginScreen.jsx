@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { View, TextInput, Button, Text } from "react-native";
 import { auth } from "../config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import styles from "../config/styles";
+import RegisterScreen from "../screens/RegisterScreen";
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
@@ -11,7 +13,7 @@ export default function LoginScreen({ navigation }) {
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        navigation.navigate("News");
+        navigation.navigate("NewsScreen");
       })
       .catch((error) => {
         setError(error.message);
@@ -19,16 +21,20 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <View>
-      <TextInput placeholder="DFGDFG" value={email} onChangeText={setEmail} />
+    <View styles={styles.container}>
+      <TextInput placeholder="Username" value={email} onChangeText={setEmail} style={styles.textinput} />
       <TextInput
-        placeholder="Password"
+        placeholder="Senha"
         value={password}
         onChangeText={setPassword}
+        style={styles.textinput}
         secureTextEntry
       />
       <Button title="Login" onPress={handleLogin} />
       {error ? <Text>{error}</Text> : null}
+      <Button title="Registrar" onPress={() => {
+        navigation.navigate("RegisterScreen");
+      }}  />
     </View>
   );
 }
