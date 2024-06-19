@@ -20,11 +20,12 @@ export default StyleSheet.create({
   error: {
     color: "red",
   },
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
+  textin:{
+    color: 'purple',
+    fontFamily: "Comic Sans MS" ,
+    textAlign: 'center',
+    fontSize: 20
+},
   textinput: {
     borderWidth: 2,
     textAlign: "center",

@@ -6,12 +6,16 @@ export default function NewsScreen() {
 
   useEffect(() => {
     fetch(
-      "https://api.currentsapi.services/v1/search?keywords=musica&language=pt&apiKey=wTylkzOXniX2s-EzsxjQ9OQTif_CSy6TMfn3EO-ieoNnrf7_"
+      "https://api.currentsapi.services/v1/search?keywords=rock+music&language=en&apiKey=4Fbg-uxFFvY02DwfR0BA-iUWSTmMNmnGzUmFnms3io7ZpLQo"
     )
-      .then((response) => response.json())
-      .then((data) => setNews(data.news))
-      .catch((error) => console.error(error));
-  }, []);
+      .then(response => response.json())
+      .then(data => {
+        console.log('API RESPONSE:', data);
+        setNews(data.news);
+        console.log('News State:', news);
+      })
+      .catch(error => console.error('Fetch Error:', error));
+    } , []);
 
   return (
     <View>
@@ -20,11 +24,10 @@ export default function NewsScreen() {
         keyExtractor={(item) => item.url}
         renderItem={({ item }) => (
           <View>
-            {" "}
-            <Text>{item.title}</Text> <Text>{item.description}</Text>{" "}
+            <Text>{item.title}</Text> <Text>{item.description}</Text>
           </View>
         )}
-      />{" "}
+      />
     </View>
   );
 }
