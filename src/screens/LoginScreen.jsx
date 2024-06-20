@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { View, TextInput, Button, Text } from "react-native";
+import { View, TextInput, Text } from "react-native";
 import { auth } from "../config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import styles from "../config/styles";
-import RegisterScreen from "../screens/RegisterScreen";
+
+import { Button } from "react-native-paper";
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
@@ -21,8 +22,8 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <View styles={styles.container}>
-      <Text> Login: pinpin@gmail.com Senha: pinpin</Text>
+    <View style={styles.background}>
+      <Text style={styles.textin}> Login: pinpin@gmail.com<br/>Senha: pinpin</Text>
       <TextInput placeholder="Username" value={email} onChangeText={setEmail} style={styles.textinput} />
       <TextInput
         placeholder="Senha"
@@ -31,11 +32,11 @@ export default function LoginScreen({ navigation }) {
         style={styles.textinput}
         secureTextEntry
       />
-      <Button title="Login" onPress={handleLogin} />
+      <Button title="Login" style={styles.botao} onPress={handleLogin}  mode="contained">Logar </Button>
       {error ? <Text>{error}</Text> : null}
-      <Button title="Registrar" onPress={() => {
+      <Button title="Registrar" style={styles.botao} onPress={() => {
         navigation.navigate("RegisterScreen");
-      }}  />
+      }} mode="contained" >Registrar </Button>
     </View>
   );
 }

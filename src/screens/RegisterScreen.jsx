@@ -71,24 +71,27 @@ export default function RegisterScreen({ navigation }) {
             <Text>{errorMessage}</Text>
               <Text >Faça seu Registro:</Text>
               <TextInput
-               
+               style={styles.textinput}
                 placeholder="Digite seu nome:"
                 onChangeText={setNome}
                 value={nome}
                 error={erro.nome}
+                
               />
               <TextInput
-                
+                style={styles.textinput}
                 placeholder="Digite seu e-mail:"
                 onChangeText={setEmail}
                 value={email}
                 error={erro.email}
+                
               />
               <TextInput
-                
+                style={styles.textinput}
                 placeholder="Digite sua senha:"
                 onChangeText={setSenha}
                 value={senha}
+                
                 secureTextEntry // faz com que o campo seja senha com *
                 error={erro.senha}
               />

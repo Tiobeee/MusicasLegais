@@ -5,14 +5,15 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    textAlign: "center",
     padding: 16,
   },
   input: {
     height: 40,
     borderColor: "gray",
-    borderWidth: 1,
+    borderWidth: 10,
     marginBottom: 12,
-    paddingHorizontal: 8,
+    paddingHorizontal: 9,
   },
   button: {
     marginTop: 12,
@@ -21,17 +22,30 @@ export default StyleSheet.create({
     color: "red",
   },
   textin:{
-    color: 'purple',
+    color: '#293285',
     fontFamily: "Comic Sans MS" ,
     textAlign: 'center',
     fontSize: 20
 },
   textinput: {
     borderWidth: 2,
+    borderRadius: 10,
     textAlign: "center",
-    flex: 1,
-    padding: 4,
+    padding: 6,
     justifyContent: "center",
     alignItems: "center"
-  }
+  },
+  background: {
+    backgroundColor: "#c4d7ff",
+    justifyContent: "center",
+    padding: 16,
+    flex: 1
+  },  
+  botao: {
+    marginTop: 6,
+    padding: "5px",
+    backgroundColor: "#9CBBFF",
+    textTransform: "uppercase"
+    
+  },
 });
