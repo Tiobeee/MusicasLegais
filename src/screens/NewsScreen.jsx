@@ -49,7 +49,7 @@ export default function NewsScreen() {
     <ScrollView>
     <View style={styles.container}>
       <Text style={styles.paragraph}>{text}</Text>
-      <Button title="Atualizar Localização" onPress={getLocation}  style={styles.botao} mode="contained"> att loc</Button>
+      <Button title="Atualizar Localização" onPress={getLocation}  style={styles.botao} mode="contained"> Atualizar Localização</Button>
       <FlatList
         data={news}
         keyExtractor={(item) => item.url}
@@ -57,6 +57,7 @@ export default function NewsScreen() {
           <View>
             <Text style={styles.textin}>{item.title}</Text>
             <Text style={styles.inputin}>{item.description}</Text>
+            <br/>
           </View>
         )}
       />
