@@ -8,13 +8,6 @@ export default StyleSheet.create({
     textAlign: "center",
     padding: 16,
   },
-  input: {
-    height: 40,
-    borderColor: "gray",
-    borderWidth: 10,
-    marginBottom: 12,
-    paddingHorizontal: 9,
-  },
   button: {
     marginTop: 12,
   },
@@ -27,25 +20,29 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 20
 },
-  textinput: {
-    borderWidth: 2,
+  inputin: {
+    borderWidth: 1,
     borderRadius: 10,
     textAlign: "center",
     padding: 6,
     justifyContent: "center",
     alignItems: "center"
   },
-  background: {
+  container: {
     backgroundColor: "#c4d7ff",
     justifyContent: "center",
     padding: 16,
-    flex: 1
+    flex: 1,
+    alignItems: "center",
   },  
   botao: {
     marginTop: 6,
     padding: "5px",
     backgroundColor: "#9CBBFF",
     textTransform: "uppercase"
-    
+  },
+  paragraph: { 
+    fontSize: 18, 
+    textAlign: 'center', 
   },
 });

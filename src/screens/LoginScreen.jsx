@@ -22,21 +22,49 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <View style={styles.background}>
-      <Text style={styles.textin}> Login: pinpin@gmail.com<br/>Senha: pinpin</Text>
-      <TextInput placeholder="Username" value={email} onChangeText={setEmail} style={styles.textinput} />
+    <View style={styles.container}>
+      <Text style={styles.textin}>
+        {" "}
+        Login: pinpin@gmail.com
+        <br />
+        Senha: pinpin
+      </Text>
+
+      <TextInput
+        placeholder="Username"
+        value={email}
+        onChangeText={setEmail}
+        style={styles.inputin}
+      />
       <TextInput
         placeholder="Senha"
         value={password}
         onChangeText={setPassword}
-        style={styles.textinput}
+        style={styles.inputin}
         secureTextEntry
       />
-      <Button title="Login" style={styles.botao} onPress={handleLogin}  mode="contained">Logar </Button>
+
+      <Button
+        title="Login"
+        style={styles.botao}
+        onPress={handleLogin}
+        mode="contained"
+      >
+        Logar{" "}
+      </Button>
+
       {error ? <Text>{error}</Text> : null}
-      <Button title="Registrar" style={styles.botao} onPress={() => {
-        navigation.navigate("RegisterScreen");
-      }} mode="contained" >Registrar </Button>
+
+      <Button
+        title="Registrar"
+        style={styles.botao}
+        onPress={() => {
+          navigation.navigate("RegisterScreen");
+        }}
+        mode="contained"
+      >
+        Registrar
+      </Button>
     </View>
   );
 }

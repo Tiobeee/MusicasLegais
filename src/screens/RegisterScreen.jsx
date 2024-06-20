@@ -1,7 +1,7 @@
-import { ScrollView, View } from "react-native";
-import { Button, Text, TextInput } from "react-native-paper";
+import { TextInput, View } from "react-native";
+import { Button, Text} from "react-native-paper";
 import { useState } from "react";
-import { styles } from "../config/styles";
+import styles from "../config/styles";
 import { auth } from "../config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, doc, setDoc } from "firebase/firestore";
@@ -17,7 +17,8 @@ export default function RegisterScreen({ navigation }) {
     nome: false,
   });
 
-  function realizaRegistro() {0
+  function realizaRegistro() {
+    0;
     if (nome === "") {
       setErro({ ...erro, nome: true });
       return 0;
@@ -51,7 +52,6 @@ export default function RegisterScreen({ navigation }) {
         nome: nome,
       });
 
-      // Redireciona para a tela de login após o cadastro bem-sucedido
       navigation.navigate("LoginScreen");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
@@ -59,51 +59,44 @@ export default function RegisterScreen({ navigation }) {
       } else {
         setErrorMessage("Erro ao cadastrar usuário: " + error.message);
       }
-
     }
   }
 
-
   return (
-    <ScrollView>
-          <View>
-            <View >
-            <Text>{errorMessage}</Text>
-              <Text >Faça seu Registro:</Text>
-              <TextInput
-               style={styles.textinput}
-                placeholder="Digite seu nome:"
-                onChangeText={setNome}
-                value={nome}
-                error={erro.nome}
-                
-              />
-              <TextInput
-                style={styles.textinput}
-                placeholder="Digite seu e-mail:"
-                onChangeText={setEmail}
-                value={email}
-                error={erro.email}
-                
-              />
-              <TextInput
-                style={styles.textinput}
-                placeholder="Digite sua senha:"
-                onChangeText={setSenha}
-                value={senha}
-                
-                secureTextEntry // faz com que o campo seja senha com *
-                error={erro.senha}
-              />
-    
-              <Button onPress={realizaRegistro} mode="outlined">
-                Fazer Login
-              </Button>
-              <Button onPress={() => navigation.navigate("LoginScreen")}>
-                Voltar ao Login
-              </Button>
-            </View>
-          </View>
-    </ScrollView>
+    <View style={styles.container}>
+      <Text style={styles.textin}>Faça seu Registro:</Text>
+
+      <TextInput
+        placeholder="Digite seu nome:"
+        onChangeText={setNome}
+        value={nome}
+        style={styles.inputin}
+      />
+
+      <TextInput
+        style={styles.inputin}
+        placeholder="Digite seu e-mail:"
+        onChangeText={setEmail}
+        value={email}
+      />
+      <TextInput
+        style={styles.inputin}
+        placeholder="Digite sua senha:"
+        onChangeText={setSenha}
+        value={senha}
+        secureTextEntry
+      />
+
+      <Button onPress={realizaRegistro} style={styles.botao} mode="contained">
+        Fazer Login
+      </Button>
+      <Button
+        onPress={() => navigation.navigate("LoginScreen")}
+        style={styles.botao}
+        mode="contained"
+      >
+        Voltar ao Login
+      </Button>
+    </View>
   );
 }
